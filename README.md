@@ -2,7 +2,7 @@
 A visual learning tool to try Mathematics.
 Consists of different levels of difficulty to cater to various age groups and provides management capabilities to be deployed in an educational setting with features such administrator dashboard, instructor test publishing, grading and more!
 
-1. Technology Stack
+### Technology Stack
 * Java
 * TypeScript
 * HTML5
@@ -11,7 +11,7 @@ Consists of different levels of difficulty to cater to various age groups and pr
 * Spring Framework
 * MySQL Database
 
-2. Contributors
+### Contributors
 * Amit Maharana
 * Asmi Gandhi
 * Dhananjay Dharne
