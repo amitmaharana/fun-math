@@ -1,0 +1,132 @@
+.listHorizontal {
+  max-width: 100%;
+  border: solid 1px #ccc;
+  min-height: 282px;
+  display: flex;
+  flex-direction: row;
+  background: white;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.boxHorizontal {
+  padding: 20px 10px;
+  border-right: solid 1px #ccc;
+  color: rgba(0, 0, 0, 0.87);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  cursor: move;
+  background: white;
+  font-size: 40px;
+  flex-grow: 1;
+  flex-basis: 0;
+}
+
+.cdk-drag-preview {
+  box-sizing: border-box;
+  border-radius: 4px;
+  box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2), 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+
+.cdk-drag-placeholder {
+  opacity: 0;
+}
+
+.cdk-drag-animating {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.box:last-child {
+  border: none;
+}
+
+.list.cdk-drop-list-dragging .box:not(.cdk-drag-placeholder) {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.my-card {
+  text-align: right;
+}
+
+.container {
+  width: 80%;
+  margin: 0 25px 25px 0;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.listVertical {
+  border: solid 1px #ccc;
+  min-height: 60px;
+  background: white;
+  border-radius: 4px;
+  overflow: hidden;
+  display: block;
+}
+
+.boxVertical {
+  padding: 20px 10px;
+  border-bottom: solid 1px #ccc;
+  color: rgba(0, 0, 0, 0.87);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  box-sizing: border-box;
+  cursor: move;
+  background: white;
+  font-size: 30px;
+}
+
+mat-drawer-content {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.drawer-container {
+  width: 100px;
+  height: 200px;
+  margin: 12px;
+  border: 1px solid #555;
+}
+
+.full-size {
+  height: 82%;
+}
+
+.headers-align .mat-expansion-panel-header-title,
+.headers-align .mat-expansion-panel-header-description {
+  flex-basis: 0;
+  width: 125px;
+}
+
+.headers-align .mat-expansion-panel-header-description {
+  justify-content: space-between;
+  align-items: center;
+}
+.canvas-card {
+  min-height: 500px;
+}
+.canvas-buttons {
+  position: absolute;
+  bottom: 7%;
+}
+.canvas-compute-button {
+  right: -1%;
+  position: relative;
+}
+.canvas-clear-button {
+  right: 4%;
+  position: fixed;
+}
+.canvas-result-output {
+  position: absolute;
+  left: 38%;
+  bottom: 28%;
+  font-size: 234%;
+}

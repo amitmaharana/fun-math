@@ -1,0 +1,26 @@
+<mat-toolbar color="primary">
+   <mat-toolbar-row>
+      <button mat-button (click)="goHome()">
+         <mat-icon>home</mat-icon> Home
+      </button>
+      <button mat-button (click)="goTryCanvas()">
+         <mat-icon>school</mat-icon>Try Now!
+      </button>
+      <span class="spacer"></span>
+      <button *ngIf="isLoggedIn==='false'" mat-button (click)="goRegister()">
+         <mat-icon>account_circle</mat-icon>Register
+      </button>
+      <button *ngIf="isLoggedIn==='false'" mat-button (click)="goLogin()">
+         <mat-icon>exit_to_app</mat-icon>Login
+      </button>
+      <button *ngIf="isLoggedIn==='true'" mat-button [matMenuTriggerFor]="menu">
+         <mat-icon>emoji_people</mat-icon>Welcome, {{id}}
+      </button>
+      <mat-menu #menu="matMenu">
+         <button mat-menu-item (click)="logout()">
+            <mat-icon>power_settings_new</mat-icon>Logout
+         </button>
+      </mat-menu>
+   </mat-toolbar-row>
+</mat-toolbar>
+<router-outlet></router-outlet>

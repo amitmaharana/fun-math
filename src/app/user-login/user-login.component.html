@@ -1,0 +1,34 @@
+<mat-toolbar>
+  <mat-icon>beenhere</mat-icon><span>Login</span>
+</mat-toolbar>
+<mat-card class="my-card">
+  <mat-card-content>
+    <form [formGroup]="loginForm" class="my-form">
+      <mat-form-field class="full-width">
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="Email" name="email" formControlName="email">
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <mat-label>Password</mat-label>
+        <input matInput type="password" placeholder="Password" name="password" formControlName="password">
+      </mat-form-field>
+      <button mat-raised-button (click)="login()" color="primary">LOGIN</button>
+    </form>
+  </mat-card-content>
+
+</mat-card>
+<div style="display:flex; justify-content: center;">
+  <mat-list>
+    <mat-list-item>
+      <mat-icon>account_circle</mat-icon>Not registered yet?&nbsp;<a style="cursor: pointer;" (click)="goRegister()">
+        <b>Register</b></a>&nbsp;now!
+    </mat-list-item>
+  </mat-list>
+</div>
+<div class="forbackground">
+  <mat-list>
+    <mat-list-item>
+      <label class="tagline"> Be a wise girl or guy, give Math a try!</label>
+    </mat-list-item>
+  </mat-list>
+</div>

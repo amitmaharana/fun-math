@@ -1,0 +1,75 @@
+<div *ngIf="classSelected?callThisMethod(classSelected):false">
+  <form #createAssign="ngForm" (ngSubmit)="createAssignment(createAssign)">
+    <div>
+      <span>
+        <h3>Select multiple questions to create an assignment</h3>
+        <span>
+          <mat-form-field class="full-width">
+            <mat-label>Select assignment due date</mat-label>
+            <input ngModel name="date" matInput (focus)="duedate.open()" [matDatepicker]="duedate" [min]="startDate" placeholder="Choose a date">
+            <mat-datepicker-toggle matSuffix [for]="duedate"></mat-datepicker-toggle>
+            <mat-datepicker #duedate startView="year" [startAt]="startDate"></mat-datepicker>
+          </mat-form-field>
+        </span>
+        <span>
+          <button type="submit" mat-raised-button color="primary" style="
+          left: 1%">Create
+            Assignment</button>
+        </span>
+
+      </span>
+
+    </div>
+    <div>
+
+      <section class="card-section" *ngFor='let question of questionList; let i = index'>
+        <mat-checkbox class="ques-checkbox" ngModel name='{{question.ID}}'>
+          <mat-card>
+            <mat-card-header>
+              <mat-card-title>Question {{i+1}}</mat-card-title>
+              <mat-card-subtitle>{{question.description}}</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+              <div class="card-para">
+                <p>{{question.extradescription}}</p>
+              </div>
+              <div class="flex-container" *ngFor='let image of question.images'>
+                <span class="flex-item"><img src="{{image.name}}" /></span>
+              </div>
+              <br />
+              <br />
+              <h4>Your answer: </h4>
+              <div class="flex-container">
+                <span class="flex-item">
+                  <table *ngIf='question.answers.type == "textbox"'>
+                    <tr *ngFor='let answer of question.answers.fields'>
+                      <td>{{answer.answertext}} </td>
+                      <td> <input type="text" /></td>
+                      <td> {{answer.answerunit}}</td>
+                    </tr>
+                  </table>
+                </span>
+                <div *ngIf="question.answers.type=='button'">
+                  <span class="flex-item" *ngFor="let button of question.answers.buttons">
+                    <button mat-raised-button type="submit" value="{{button.id}}"><b>{{button.id}}</b></button>
+                  </span>
+                </div>
+              </div>
+            </mat-card-content>
+          </mat-card>
+        </mat-checkbox>
+      </section>
+      <br>
+    </div>
+
+    <!--Multiplication and Division-->
+    <!--Understanding exponents-->
+    <!--Number theory-->
+    <!--Fractions-->
+    <!--Mixed Operations-->
+    <!--Probability-->
+    <!--Time-->
+    <!--Geometric Measurements-->
+    <!--Ratios and Percentages-->
+  </form>
+</div>

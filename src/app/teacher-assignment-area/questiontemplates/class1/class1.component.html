@@ -1,0 +1,487 @@
+<!--Counting problems "-->
+<div *ngIf="classSelected == 'c1s1'">
+
+  <div>
+    <span>
+      <h3>Select multiple questions to create an assignment</h3>
+      <span>
+          <mat-form-field class="full-width">
+            <mat-label>Select assignment due date</mat-label>
+            <input ngModel name="date" matInput (focus)="duedate.open()" [matDatepicker]="duedate" [min]="startDate" placeholder="Choose a date">
+            <mat-datepicker-toggle matSuffix [for]="duedate"></mat-datepicker-toggle>
+            <mat-datepicker #duedate startView="year" [startAt]="startDate"></mat-datepicker>
+          </mat-form-field>
+        </span>
+        <span>
+            <button type="submit" mat-raised-button color="primary" style="
+            left: 1%">Create
+              Assignment</button>
+          </span>
+    </span>
+  </div>
+  <div>
+    <section class="card-section">
+
+      <mat-checkbox class="ques-checkbox">
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title>Question 1</mat-card-title>
+            <mat-card-subtitle>Count the number of snakes</mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+            <div class="flex-container">
+              <span class="flex-item"><img src="../../assets/counting/snake.jpg" alt="snake1" /></span>
+              <span class="flex-item"><img src="../../assets/counting/snake.jpg" alt="snake2" /></span>
+              <span class="flex-item"><img src="../../assets/counting/snake.jpg" alt="snake3" /></span>
+              <span class="flex-item"><img src="../../assets/counting/snake.jpg" alt="snake4" /></span>
+              <span class="flex-item"><img src="../../assets/counting/snake.jpg" alt="snake5" /></span>
+              <span class="flex-item"><img src="../../assets/counting/snake.jpg" alt="snake6" /></span>
+              <span class="flex-item"><img src="../../assets/counting/snake.jpg" alt="snake7" /></span>
+              <span class="flex-item"><img src="../../assets/counting/snake.jpg" alt="snake8" /></span>
+              <!--<span class="flex-item"><img src="../../assets/counting/snake.jpg" alt="snake9" /></span>
+               <span class="flex-item"><img src="../../assets/counting/snake.jpg" alt="snake10" /></span>
+              <span class="flex-item"><img src="../../assets/counting/snake.jpg" alt="snake11" /></span>
+              <span class="flex-item"><img src="../../assets/counting/snake.jpg" alt="snake12" /></span> -->
+            </div>
+            <br />
+            <br />
+            <div class="flex-container">
+              <span class="flex-item">Your answer: <input type="text" /></span>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </mat-checkbox>
+    </section>
+    <br>
+    <section class="card-section">
+      <mat-checkbox class="ques-checkbox">
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title>Question 2</mat-card-title>
+            <mat-card-subtitle>Count the number of flowers</mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+            <div class="flex-container">
+              <span class="flex-item"><img src="../../assets/counting/flower.jpg" alt="flower1" /></span>
+              <span class="flex-item"><img src="../../assets/counting/flower.jpg" alt="flower2" /></span>
+              <span class="flex-item"><img src="../../assets/counting/flower.jpg" alt="flower3" /></span>
+              <span class="flex-item"><img src="../../assets/counting/flower.jpg" alt="flower4" /></span>
+              <span class="flex-item"><img src="../../assets/counting/flower.jpg" alt="flower5" /></span>
+            </div>
+            <br />
+            <br />
+            <div class="flex-container">
+              <span class="flex-item">Your answer: <input type="text" /></span>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </mat-checkbox>
+    </section>
+    <br>
+    <section class="card-section">
+      <mat-checkbox class="ques-checkbox">
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title>Question 3</mat-card-title>
+            <mat-card-subtitle>Count the number of candies</mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+            <div class="flex-container">
+              <span class="flex-item"><img src="../../assets/counting/candy.jpg" alt="flower1" /></span>
+              <span class="flex-item"><img src="../../assets/counting/candy.jpg" alt="flower2" /></span>
+              <span class="flex-item"><img src="../../assets/counting/candy.jpg" alt="flower3" /></span>
+              <span class="flex-item"><img src="../../assets/counting/candy.jpg" alt="flower4" /></span>
+              <span class="flex-item"><img src="../../assets/counting/candy.jpg" alt="flower5" /></span>
+              <span class="flex-item"><img src="../../assets/counting/candy.jpg" alt="flower4" /></span>
+              <span class="flex-item"><img src="../../assets/counting/candy.jpg" alt="flower5" /></span>
+              <span class="flex-item"><img src="../../assets/counting/candy.jpg" alt="flower4" /></span>
+              <span class="flex-item"><img src="../../assets/counting/candy.jpg" alt="flower5" /></span>
+            </div>
+            <br />
+            <br />
+            <div class="flex-container">
+              <span class="flex-item">Your answer: <input type="text" /></span>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </mat-checkbox>
+    </section>
+  </div>
+</div>
+<!--Understanding Addition-->
+<div *ngIf="classSelected == 'c1s2'">
+  <div>
+    <span>
+      <h3>Select multiple questions to create an assignment</h3>
+      <button class="create-button" mat-raised-button color="primary" (click)="createAssignment()">Create
+        Assignment</button>
+    </span>
+  </div>
+  <div>
+    <section class="card-section">
+      <mat-checkbox class="ques-checkbox">
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title>Question 1</mat-card-title>
+            <mat-card-subtitle>Count the total number of Orange and Yellow
+              Stars</mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+            <div class="flex-container">
+              <span class="flex-item"><img src="../../assets/counting/star_o.jpg" alt="star1" /></span>
+              <!-- <span class="flex-item"><img src="../../assets/counting/star_o.jpg" alt="star2" /></span>
+            <span class="flex-item"><img src="../../assets/counting/star_o.jpg" alt="star3" /></span> -->
+              <span class="flex-item"><img src="../../assets/counting/star_o.jpg" alt="star4" /></span>
+              <span class="flex-item"><img src="../../assets/counting/addition.jpg" alt="add" /></span>
+              <span class="flex-item"><img src="../../assets/counting/star_y.jpg" alt="star5" /></span>
+              <span class="flex-item"><img src="../../assets/counting/star_y.jpg" alt="star6" /></span>
+              <span class="flex-item"><img src="../../assets/counting/star_y.jpg" alt="star7" /></span>
+            </div>
+            <br />
+            <br />
+            <div class="flex-container">
+              <span class="flex-item">Your answer: <input type="text" /></span>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </mat-checkbox>
+    </section>
+    <br>
+    <section class="card-section">
+      <mat-checkbox class="ques-checkbox">
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title>Question 2</mat-card-title>
+            <mat-card-subtitle>Count the total number of purple and pink
+              hearts</mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+            <div class="flex-container">
+              <span class="flex-item"><img src="../../assets/counting/heart_pu.jpg" alt="heart1" /></span>
+              <span class="flex-item"><img src="../../assets/counting/heart_pu.jpg" alt="heart2" /></span>
+              <!-- <span><img src="../../assets/counting/heart_pu.jpg" alt="heart3" /></span>
+            <span><img src="../../assets/counting/heart_pu.jpg" alt="heart4" /></span> -->
+              <span class="flex-item"><img src="../../assets/counting/addition.jpg" alt="add" /></span>
+              <span class="flex-item"><img src="../../assets/counting/heart_pi.jpg" alt="heart5" /></span>
+              <span class="flex-item"><img src="../../assets/counting/heart_pi.jpg" alt="heart6" /></span>
+              <!-- <span><img src="../../assets/counting/heart_pi.jpg" alt="heart7" /></span>
+            <span><img src="../../assets/counting/heart_pi.jpg" alt="heart8" /></span>
+            <span><img src="../../assets/counting/heart_pi.jpg" alt="heart9" /></span>
+            <span><img src="../../assets/counting/heart_pi.jpg" alt="heart10" /></span> -->
+            </div>
+            <br />
+            <br />
+            <div class="flex-container">
+              <span class="flex-item">Your answer: <input type="text" /></span>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </mat-checkbox>
+    </section>
+  </div>
+</div>
+<!--Understanding subtraction-->
+<div *ngIf="classSelected == 'c1s3'">
+  <div>
+    <section class="card-section">
+      <mat-checkbox class="ques-checkbox">
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title>Question 1</mat-card-title>
+            <mat-card-subtitle>How many orange stars are more than the yellow
+              ones</mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content class="flex-container">
+            <span class="flex-item"><img src="../../assets/counting/star_o.jpg" alt="star1" /></span>
+            <span class="flex-item"><img src="../../assets/counting/star_o.jpg" alt="star2" /></span>
+            <span class="flex-item"><img src="../../assets/counting/star_o.jpg" alt="star3" /></span>
+            <span class="flex-item"><img src="../../assets/counting/star_o.jpg" alt="star4" /></span>
+            <span class="flex-item"><img src="../../assets/counting/subtraction.jpg" alt="sub" /></span>
+            <span class="flex-item"><img src="../../assets/counting/star_y.jpg" alt="star5" /></span>
+            <span class="flex-item"><img src="../../assets/counting/star_y.jpg" alt="star6" /></span>
+            <br />
+            <br />
+            <span>Your answer: <input type="text" /></span>
+          </mat-card-content>
+        </mat-card>
+      </mat-checkbox>
+    </section>
+    <section class="card-section">
+      <mat-checkbox class="ques-checkbox">
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title>Question 2</mat-card-title>
+            <mat-card-subtitle>How many purple hearts are more than the pink
+              ones.</mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+            <span><img src="../../assets/counting/heart_pu.jpg" alt="heart1" /></span>
+            <span><img src="../../assets/counting/heart_pu.jpg" alt="heart2" /></span>
+            <span><img src="../../assets/counting/heart_pu.jpg" alt="heart3" /></span>
+            <span><img src="../../assets/counting/heart_pu.jpg" alt="heart4" /></span>
+            <span><img src="../../assets/counting/heart_pu.jpg" alt="heart5" /></span>
+            <span><img src="../../assets/counting/heart_pu.jpg" alt="heart6" /></span>
+            <span class="flex-item"><img src="../../assets/counting/subtraction.jpg" alt="sub" /></span>
+            <span><img src="../../assets/counting/heart_pi.jpg" alt="heart7" /></span>
+            <span><img src="../../assets/counting/heart_pi.jpg" alt="heart8" /></span>
+            <span><img src="../../assets/counting/heart_pi.jpg" alt="heart9" /></span>
+            <br />
+            <br />
+            <span>Your answer: <input type="text" /></span>
+          </mat-card-content>
+        </mat-card>
+      </mat-checkbox>
+    </section>
+  </div>
+</div>
+<!--Mixed Operations-->
+<div *ngIf="classSelected == 'c1s4'">
+  <div>
+    <section class="card-section">
+      <mat-checkbox class="ques-checkbox">
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title>Question 1</mat-card-title>
+            <mat-card-subtitle>Count the total number of Orange and Yellow
+              Stars</mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content class="flex-container">
+            <span class="flex-item"><img src="../../assets/counting/star_o.jpg" alt="star1" /></span>
+            <span class="flex-item"><img src="../../assets/counting/star_o.jpg" alt="star2" /></span>
+            <span class="flex-item"><img src="../../assets/counting/star_o.jpg" alt="star3" /></span>
+            <span class="flex-item"><img src="../../assets/counting/star_o.jpg" alt="star4" /></span>
+            <span class="flex-item"><img src="../../assets/counting/star_y.jpg" alt="star5" /></span>
+            <span class="flex-item"><img src="../../assets/counting/star_y.jpg" alt="star6" /></span>
+            <span class="flex-item"><img src="../../assets/counting/star_y.jpg" alt="star7" /></span>
+            <br />
+            <br />
+            <span>Your answer: <input type="text" /></span>
+          </mat-card-content>
+        </mat-card>
+      </mat-checkbox>
+    </section>
+    <section class="card-section">
+      <mat-checkbox class="ques-checkbox">
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title>Question 2</mat-card-title>
+            <mat-card-subtitle>Count the total number of purple and pink
+              hearts</mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+            <span><img src="../../assets/counting/heart_pu.jpg" alt="heart1" /></span>
+            <span><img src="../../assets/counting/heart_pu.jpg" alt="heart2" /></span>
+            <span><img src="../../assets/counting/heart_pu.jpg" alt="heart3" /></span>
+            <span><img src="../../assets/counting/heart_pu.jpg" alt="heart4" /></span>
+            <span><img src="../../assets/counting/heart_pi.jpg" alt="heart5" /></span>
+            <br />
+            <br />
+            <span>Your answer: <input type="text" /></span>
+          </mat-card-content>
+        </mat-card>
+      </mat-checkbox>
+    </section>
+  </div>
+</div>
+<!--Comparison Problems-->
+<div *ngIf="classSelected == 'c1s5'">
+  <div>
+    <section class="card-section">
+      <mat-checkbox class="ques-checkbox">
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title>Question 1</mat-card-title>
+            <mat-card-subtitle>Count the number of snakes</mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content class="flex-container">
+            <span class="flex-item"><img src="../../assets/counting/snake.jpg" alt="snake1" /></span>
+            <span class="flex-item"><img src="../../assets/counting/snake.jpg" alt="snake2" /></span>
+            <span class="flex-item"><img src="../../assets/counting/snake.jpg" alt="snake3" /></span>
+            <span class="flex-item"><img src="../../assets/counting/snake.jpg" alt="snake4" /></span>
+            <span class="flex-item"><img src="../../assets/counting/snake.jpg" alt="snake5" /></span>
+            <span class="flex-item"><img src="../../assets/counting/snake.jpg" alt="snake6" /></span>
+            <span class="flex-item"><img src="../../assets/counting/snake.jpg" alt="snake7" /></span>
+            <span class="flex-item"><img src="../../assets/counting/snake.jpg" alt="snake8" /></span>
+            <span class="flex-item"><img src="../../assets/counting/snake.jpg" alt="snake9" /></span>
+            <span class="flex-item"><img src="../../assets/counting/snake.jpg" alt="snake10" /></span>
+            <span class="flex-item"><img src="../../assets/counting/snake.jpg" alt="snake11" /></span>
+            <span class="flex-item"><img src="../../assets/counting/snake.jpg" alt="snake12" /></span>
+            <br />
+            <br />
+            <span>Your answer: <input type="text" /></span>
+          </mat-card-content>
+        </mat-card>
+      </mat-checkbox>
+    </section>
+    <section class="card-section">
+      <mat-checkbox class="ques-checkbox">
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title>Question 2</mat-card-title>
+            <mat-card-subtitle>Count the number of flowers</mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+            <span><img src="../../assets/counting/flower.jpg" alt="flower1" /></span>
+            <span><img src="../../assets/counting/flower.jpg" alt="flower2" /></span>
+            <span><img src="../../assets/counting/flower.jpg" alt="flower3" /></span>
+            <span><img src="../../assets/counting/flower.jpg" alt="flower4" /></span>
+            <span><img src="../../assets/counting/flower.jpg" alt="flower5" /></span>
+            <br />
+            <br />
+            <span>Your answer: <input type="text" /></span>
+          </mat-card-content>
+        </mat-card>
+      </mat-checkbox>
+    </section>
+  </div>
+</div>
+<!--Measurements-->
+<div *ngIf="classSelected == 'c1s6'">
+  <div>
+    <section class="card-section">
+      <mat-checkbox class="ques-checkbox">
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title>Question 1</mat-card-title>
+            <mat-card-subtitle>Count the total number of Orange and Yellow
+              Stars</mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content class="flex-container">
+            <span class="flex-item"><img src="../../assets/counting/star_o.jpg" alt="star1" /></span>
+            <span class="flex-item"><img src="../../assets/counting/star_o.jpg" alt="star2" /></span>
+            <span class="flex-item"><img src="../../assets/counting/star_o.jpg" alt="star3" /></span>
+            <span class="flex-item"><img src="../../assets/counting/star_o.jpg" alt="star4" /></span>
+            <span class="flex-item"><img src="../../assets/counting/star_y.jpg" alt="star5" /></span>
+            <span class="flex-item"><img src="../../assets/counting/star_y.jpg" alt="star6" /></span>
+            <span class="flex-item"><img src="../../assets/counting/star_y.jpg" alt="star7" /></span>
+            <br />
+            <br />
+            <span>Your answer: <input type="text" /></span>
+          </mat-card-content>
+        </mat-card>
+      </mat-checkbox>
+    </section>
+    <section class="card-section">
+      <mat-checkbox class="ques-checkbox">
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title>Question 2</mat-card-title>
+            <mat-card-subtitle>Count the total number of purple and pink
+              hearts</mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+            <span><img src="../../assets/counting/heart_pu.jpg" alt="heart1" /></span>
+            <span><img src="../../assets/counting/heart_pu.jpg" alt="heart2" /></span>
+            <span><img src="../../assets/counting/heart_pu.jpg" alt="heart3" /></span>
+            <span><img src="../../assets/counting/heart_pu.jpg" alt="heart4" /></span>
+            <span><img src="../../assets/counting/heart_pi.jpg" alt="heart5" /></span>
+            <br />
+            <br />
+            <span>Your answer: <input type="text" /></span>
+          </mat-card-content>
+        </mat-card>
+      </mat-checkbox>
+    </section>
+  </div>
+</div>
+<!--Patterns-->
+<div *ngIf="classSelected == 'c1s7'">
+  <div>
+    <section class="card-section">
+      <mat-checkbox class="ques-checkbox">
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title>Question 1</mat-card-title>
+            <mat-card-subtitle>Count the number of snakes</mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content class="flex-container">
+            <span class="flex-item"><img src="../../assets/counting/snake.jpg" alt="snake1" /></span>
+            <span class="flex-item"><img src="../../assets/counting/snake.jpg" alt="snake2" /></span>
+            <span class="flex-item"><img src="../../assets/counting/snake.jpg" alt="snake3" /></span>
+            <span class="flex-item"><img src="../../assets/counting/snake.jpg" alt="snake4" /></span>
+            <span class="flex-item"><img src="../../assets/counting/snake.jpg" alt="snake5" /></span>
+            <span class="flex-item"><img src="../../assets/counting/snake.jpg" alt="snake6" /></span>
+            <span class="flex-item"><img src="../../assets/counting/snake.jpg" alt="snake7" /></span>
+            <span class="flex-item"><img src="../../assets/counting/snake.jpg" alt="snake8" /></span>
+            <span class="flex-item"><img src="../../assets/counting/snake.jpg" alt="snake9" /></span>
+            <span class="flex-item"><img src="../../assets/counting/snake.jpg" alt="snake10" /></span>
+            <span class="flex-item"><img src="../../assets/counting/snake.jpg" alt="snake11" /></span>
+            <span class="flex-item"><img src="../../assets/counting/snake.jpg" alt="snake12" /></span>
+            <br />
+            <br />
+            <span>Your answer: <input type="text" /></span>
+          </mat-card-content>
+        </mat-card>
+      </mat-checkbox>
+    </section>
+    <section class="card-section">
+      <mat-checkbox class="ques-checkbox">
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title>Question 2</mat-card-title>
+            <mat-card-subtitle>Count the number of flowers</mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+            <span><img src="../../assets/counting/flower.jpg" alt="flower1" /></span>
+            <span><img src="../../assets/counting/flower.jpg" alt="flower2" /></span>
+            <span><img src="../../assets/counting/flower.jpg" alt="flower3" /></span>
+            <span><img src="../../assets/counting/flower.jpg" alt="flower4" /></span>
+            <span><img src="../../assets/counting/flower.jpg" alt="flower5" /></span>
+            <br />
+            <br />
+            <span>Your answer: <input type="text" /></span>
+          </mat-card-content>
+        </mat-card>
+      </mat-checkbox>
+    </section>
+  </div>
+</div>
+<!--Shapes-->
+<div *ngIf="classSelected == 'c1s8'">
+  <div>
+    <section class="card-section">
+      <mat-checkbox class="ques-checkbox">
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title>Question 1</mat-card-title>
+            <mat-card-subtitle>Count the total number of Orange and Yellow
+              Stars</mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content class="flex-container">
+            <span class="flex-item"><img src="../../assets/counting/star_o.jpg" alt="star1" /></span>
+            <span class="flex-item"><img src="../../assets/counting/star_o.jpg" alt="star2" /></span>
+            <span class="flex-item"><img src="../../assets/counting/star_o.jpg" alt="star3" /></span>
+            <span class="flex-item"><img src="../../assets/counting/star_o.jpg" alt="star4" /></span>
+            <span class="flex-item"><img src="../../assets/counting/star_y.jpg" alt="star5" /></span>
+            <span class="flex-item"><img src="../../assets/counting/star_y.jpg" alt="star6" /></span>
+            <span class="flex-item"><img src="../../assets/counting/star_y.jpg" alt="star7" /></span>
+            <br />
+            <br />
+            <span>Your answer: <input type="text" /></span>
+          </mat-card-content>
+        </mat-card>
+      </mat-checkbox>
+    </section>
+    <section class="card-section">
+      <mat-checkbox class="ques-checkbox">
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title>Question 2</mat-card-title>
+            <mat-card-subtitle>Count the total number of purple and pink
+              hearts</mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+            <span><img src="../../assets/counting/heart_pu.jpg" alt="heart1" /></span>
+            <span><img src="../../assets/counting/heart_pu.jpg" alt="heart2" /></span>
+            <span><img src="../../assets/counting/heart_pu.jpg" alt="heart3" /></span>
+            <span><img src="../../assets/counting/heart_pu.jpg" alt="heart4" /></span>
+            <span><img src="../../assets/counting/heart_pi.jpg" alt="heart5" /></span>
+            <br />
+            <br />
+            <span>Your answer: <input type="text" /></span>
+          </mat-card-content>
+        </mat-card>
+      </mat-checkbox>
+    </section>
+  </div>
+</div>

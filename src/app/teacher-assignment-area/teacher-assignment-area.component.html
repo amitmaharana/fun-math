@@ -1,0 +1,156 @@
+<div class="split-left">
+  <br />
+  <br />
+  <mat-expansion-panel [expanded]="true">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Class 1
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <mat-panel-description>
+      <mat-list>
+        <mat-list-item>
+          <!-- <a class="link-menu" (click)="displayclass1s1()">Counting problems</a> -->
+          <a class="link-menu" (click)="fetchData();linkClicked = 'c1s1'">Counting problems</a>
+        </mat-list-item>
+        <mat-list-item>
+          <a class="link-menu" (click)="linkClicked = 'c1s2'">Understanding Addition</a>
+        </mat-list-item>
+        <mat-list-item>
+          <a class="link-menu" (click)="linkClicked = 'c1s3'">Understanding Subtraction</a>
+        </mat-list-item>
+        <mat-list-item>
+          <a class="link-menu" (click)="linkClicked = 'c1s4'">Mixed Operations</a>
+        </mat-list-item>
+        <mat-list-item>
+          <a class="link-menu" (click)="linkClicked = 'c1s5'">Comparison Problems</a>
+        </mat-list-item>
+        <mat-list-item>
+          <a class="link-menu" (click)="linkClicked = 'c1s6'">Measurement</a>
+        </mat-list-item>
+        <mat-list-item>
+          <a class="link-menu" (click)="linkClicked = 'c1s7'">Patterns</a>
+        </mat-list-item>
+        <mat-list-item>
+          <a class="link-menu" (click)="linkClicked = 'c1s8'">Shapes</a>
+        </mat-list-item>
+      </mat-list>
+    </mat-panel-description>
+  </mat-expansion-panel>
+  <br />
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Class 3
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <mat-panel-description>
+      <mat-list>
+        <mat-list-item>
+          <a class="link-menu">Counting problems</a>
+        </mat-list-item>
+        <mat-list-item>
+          <a class="link-menu">Understanding Addition</a>
+        </mat-list-item>
+        <mat-list-item>
+          <a class="link-menu">Understanding Subtraction</a>
+        </mat-list-item>
+        <mat-list-item>
+          <a class="link-menu">Understanding Multiplcation</a>
+        </mat-list-item>
+        <mat-list-item>
+          <a class="link-menu">Understanding Division</a>
+        </mat-list-item>
+        <mat-list-item>
+          <a class="link-menu">Mixed Operations</a>
+        </mat-list-item>
+        <mat-list-item>
+          <a class="link-menu">Comparison Problems</a>
+        </mat-list-item>
+        <mat-list-item>
+          <a class="link-menu">Measurement</a>
+        </mat-list-item>
+        <mat-list-item>
+          <a class="link-menu">Patterns</a>
+        </mat-list-item>
+        <mat-list-item>
+          <a class="link-menu">Shapes</a>
+        </mat-list-item>
+      </mat-list>
+    </mat-panel-description>
+  </mat-expansion-panel>
+  <br />
+  <mat-expansion-panel >
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Class 5
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <mat-panel-description>
+      <mat-list>
+        <mat-list-item>
+          <a class="link-menu" (click)="linkClicked = 'c5s1'">Addition and Subtraction</a>
+        </mat-list-item>
+        <mat-list-item>
+          <a class="link-menu" (click)="linkClicked = 'c5s2'">Multiplication and Division</a>
+        </mat-list-item>
+        <mat-list-item>
+          <a class="link-menu" (click)="linkClicked = 'c5s3'">Understanding Exponents</a>
+        </mat-list-item>
+        <mat-list-item>
+          <a class="link-menu" (click)="linkClicked = 'c5s4'">Number Theory</a>
+        </mat-list-item>
+        <mat-list-item>
+          <a class="link-menu" (click)="linkClicked = 'c5s5'">Fractions</a>
+        </mat-list-item>
+        <mat-list-item>
+          <a class="link-menu" (click)="linkClicked = 'c5s6'">Mixed Operations</a>
+        </mat-list-item>
+        <mat-list-item>
+          <a class="link-menu" (click)="linkClicked = 'c5s7'">Probability</a>
+        </mat-list-item>
+        <mat-list-item>
+          <a class="link-menu" (click)="linkClicked = 'c5s8'">Time</a>
+        </mat-list-item>
+        <mat-list-item>
+          <a class="link-menu" (click)="linkClicked = 'c5s9'">Geometric Measurements</a>
+        </mat-list-item>
+        <mat-list-item>
+          <a class="link-menu" (click)="linkClicked = 'c5s10'">Ratios and Percentage</a>
+        </mat-list-item>
+      </mat-list>
+    </mat-panel-description>
+  </mat-expansion-panel>
+  <br />
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Class 7
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+  </mat-expansion-panel>
+  <br />
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Class 9
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <mat-panel-description>
+      <mat-list-item>
+        <a href></a>
+      </mat-list-item>
+    </mat-panel-description>
+  </mat-expansion-panel>
+  <br />
+
+  <br />
+</div>
+
+<!-- <mat-divider vertical style="height:100px"></mat-divider> -->
+<div class="flex-container">
+  <div class=" slide-right">
+    <app-class1 [classSelected]="linkClicked"></app-class1>
+    <app-class5 [classSelected]="linkClicked"></app-class5>
+  </div>
+</div>

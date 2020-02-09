@@ -1,0 +1,58 @@
+<mat-toolbar>
+    <mat-icon>people_alt</mat-icon><span>Registration</span>
+</mat-toolbar>
+<mat-card class="my-card">
+    <mat-card-content layout-align="center center">
+        <form class="my-form">
+            <mat-form-field class="full-width">
+                <mat-label>First Name</mat-label>
+                <input matInput placeholder="First Name" name="fname" [formControl]="fname" required>
+                <mat-error *ngIf="fname.hasError('required')">
+                    First name is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field class="full-width">
+                <mat-label>Last Name</mat-label>
+                <input matInput placeholder="Last Name" name="lname" [formControl]="lname" required>
+                <mat-error *ngIf="lname.hasError('required')">
+                    Last Name is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field class="full-width">
+                <mat-label>Email</mat-label>
+                <input matInput placeholder="Email" name="email" [formControl]="email" required>
+                <mat-error *ngIf="email.hasError('email') && !email.hasError('required')">
+                    Please enter a valid email address
+                </mat-error>
+                <mat-error *ngIf="email.hasError('required')">
+                    Email is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field class="full-width">
+                <mat-label>Password</mat-label>
+                <input matInput type="password" placeholder="Password" name="password" maxlength="32"
+                    [formControl]="password" required>
+                <mat-hint align="start"><strong>Minimum length is 6</strong> </mat-hint>
+                <mat-hint align="end">{{password.value.length}} / 32</mat-hint>
+                <mat-error *ngIf="password.hasError('required')">
+                    Password is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field class="full-width">
+                <mat-label>Gender</mat-label>
+                <mat-select [formControl]="gender">
+                    <mat-option value="male">Male</mat-option>
+                    <mat-option value="female">Female</mat-option>
+                    <mat-option value="other">Other</mat-option>
+                </mat-select>
+            </mat-form-field><br />
+            <mat-form-field class="full-width">
+                <mat-label>Date of Birth</mat-label>
+                <input matInput [matDatepicker]="dob" (focus)="dob.open()" [min]="minDate" [max]="maxDate" placeholder="Choose a date" [formControl]="date">
+                <mat-datepicker-toggle matSuffix [for]="dob"></mat-datepicker-toggle>
+                <mat-datepicker #dob startView="year" [startAt]="startDate"></mat-datepicker>
+            </mat-form-field>
+            <button mat-raised-button (click)="register()" color="primary">REGISTER</button>
+        </form>
+    </mat-card-content>
+</mat-card>

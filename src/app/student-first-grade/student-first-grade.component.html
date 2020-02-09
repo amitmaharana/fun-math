@@ -1,0 +1,134 @@
+<div class="split-left">
+
+  <mat-list>
+    <span class="box">
+      <a mat-list-item>
+        <mat-icon matListIcon>folder</mat-icon>
+        <h3 matLine class="link-menu" (click)="countingProblems();incorrectLabel=false;correctLabel=false">Counting Problems</h3>
+      </a>
+    </span>
+    <mat-divider></mat-divider>
+    <a mat-list-item>
+      <mat-icon matListIcon>folder</mat-icon>
+      <h3 matLine class="link-menu" (click)="additionProblems();incorrectLabel=false;correctLabel=false">Understanding Addition</h3>
+    </a>
+    <mat-divider></mat-divider>
+    <a mat-list-item>
+      <mat-icon matListIcon>folder</mat-icon>
+      <h3 matLine class="link-menu" (click)="subtractionProblems();incorrectLabel=false;correctLabel=false">Understanding Subtraction</h3>
+    </a>
+    <mat-divider></mat-divider>
+    <a mat-list-item>
+      <mat-icon matListIcon>folder</mat-icon>
+      <h3 matLine class="link-menu" (click)="mixedOpProblems();incorrectLabel=false;correctLabel=false">Mixed Operations</h3>
+    </a>
+    <mat-divider></mat-divider>
+    <a mat-list-item>
+      <mat-icon matListIcon>folder</mat-icon>
+      <h3 matLine class="link-menu" (click)="comparisonProblems();incorrectLabel=false;correctLabel=false">Comparison Problems</h3>
+    </a>
+    <mat-divider></mat-divider>
+    <a mat-list-item>
+      <mat-icon matListIcon>folder</mat-icon>
+      <h3 matLine class="link-menu" (click)="measurementProblems();incorrectLabel=false;correctLabel=false">Measurement Problems</h3>
+    </a>
+    <mat-divider></mat-divider>
+    <a mat-list-item>
+      <mat-icon matListIcon>folder</mat-icon>
+      <h3 matLine class="link-menu" (click)="patternProblems();incorrectLabel=false;correctLabel=false">Patterns</h3>
+    </a>
+    <mat-divider></mat-divider>
+    <a mat-list-item>
+      <mat-icon matListIcon>folder</mat-icon>
+      <h3 matLine class="link-menu" (click)="shapesProblems();incorrectLabel=false;correctLabel=false">Shapes</h3>
+    </a>
+    <mat-divider></mat-divider>
+  </mat-list>
+</div>
+<mat-divider vertical="true" gutter></mat-divider>
+<!-- <mat-grid-tile colspan="8"> -->
+<div class="container first-grade-panel">
+  <div class="slide-right">
+    <!-- Added for testing dynamic logic-->
+    <div *ngIf="test_for_pattern" class="question-panel">
+      <div>
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title>Question{{question[i].ID}}</mat-card-title>
+            <mat-card-subtitle>{{question[i].description}}</mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+            <div>
+              <p><b>{{question[i].extradescription}}</b></p>
+            </div>
+            <br>
+            <br>
+            <div class="flex-container">
+              <span class="flex-item" *ngFor="let image of question[i].images"><img
+                  src="../../assets/{{image.name}}"></span>
+            </div>
+            <br>
+            <br>
+            <br>
+
+            <div class="flex-container" style="position:relative;right:-50px">
+              <div *ngIf="question[i].answers.type=='button'">
+                <mat-button-toggle-group #abc='matButtonToggleGroup' ngModel name="abc">
+                  <mat-button-toggle *ngFor="let button of question[i].answers.buttons"
+                    (click)="evaluateAnswer(question[i].correctAnswer,abc.value)" value={{button.id}}>
+                    {{button.id}}</mat-button-toggle>
+                </mat-button-toggle-group>
+              </div>
+              <div *ngIf="question[i].answers.type=='image'">
+                <mat-button-toggle-group #abc='matButtonToggleGroup' ngModel name="abc">
+                  <mat-button-toggle *ngFor="let button of question[i].answers.buttons"
+                    (click)="evaluateAnswer(question[i].correctAnswer,abc.value)" value={{button.id}}>
+                    <img src="../../assets/{{button.image}}" /></mat-button-toggle>
+                </mat-button-toggle-group>
+              </div>
+              <!-- <div *ngIf="question[i].answers.type=='button'">
+                <span class="flex-item" *ngFor="let button of question[i].answers.buttons">
+                  <button mat-raised-button type="submit"
+                    (click)="changeLabelNameC1S1Q2('1')"><b>{{button.id}}</b></button>
+                </span>
+              </div> -->
+              <!-- <div *ngIf="question[i].answers.type=='image'">
+                <span class="flex-item" *ngFor="let button of question[i].answers.buttons">
+                  <button mat-raised-button type="submit" (click)="changeLabelNameC1S1Q2('1')"><img
+                      src="../../assets/{{button.image}}" /></button>
+                </span>
+              </div> -->
+              <div *ngIf="question[i].answers.type=='textbox'">
+                <span class="flex-item">
+                  <table>
+                    <tr *ngFor='let answer of question[i].answers.fields'>
+                      <td>{{answer.answertext}} </td>
+                      <td> <input type="text" #inputValue (change)="evaluateAnswer(question[i].correctAnswer,inputValue.value)" /></td>
+                      <td> {{answer.answerunit}}</td>
+                    </tr>
+                  </table>
+                </span>
+              </div>
+            </div>
+            <div style="padding-top:1%">
+              <mat-label *ngIf="incorrectLabel" class="incorrect-label" style="color:red">Incorrect</mat-label>
+            </div>
+            <div style="padding-top:1%">
+              <mat-label *ngIf="correctLabel"class="correct-label" style="color:green">Correct</mat-label>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+      <br>
+      <div>
+        <button class="btn btn-outline-rounded btn-default previous-btn"
+          (click)="i=i-1;incorrectLabel=false;correctLabel=false" [disabled]="i==0"> <span style="margin-right:10px;"
+            class="glyphicon glyphicon-arrow-left"></span>
+          Previous</button>
+        <button class="btn btn-outline-rounded btn-info" style="float:right"
+          (click)="i=i+1;incorrectLabel=false;correctLabel=false" [disabled]="i==question.length-1">Next <span
+            style="margin-right:10px;" class="glyphicon glyphicon-arrow-right"></span> </button>
+      </div>
+    </div>
+  </div>
+</div>

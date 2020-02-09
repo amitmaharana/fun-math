@@ -1,0 +1,22 @@
+.flex-container {
+  display: flex;
+  flex-flow: row wrap;
+  flex-direction: column;
+}
+mat-card-content .card-para {
+  text-overflow: ellipsis;
+  flex: 1 1 auto;
+}
+
+.create-button {
+  position: relative;
+  left: 666px;
+}
+
+mat-card {
+  min-width: 800px;
+}
+
+.flex-item {
+  flex-flow: row wrap;
+}

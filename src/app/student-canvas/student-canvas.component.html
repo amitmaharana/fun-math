@@ -1,0 +1,103 @@
+<mat-toolbar>
+  <mat-icon>picture_in_picture</mat-icon><span>Canvas</span>
+  <!-- <button style="position:absolute; left: 300px" mat-raised-button (click)="clear()" color="primary">Clear</button>
+  <span *ngIf="hasResult" style="position:absolute; left: 870px">Result: {{isComputed}}</span> -->
+  <!-- <button style="position:absolute; right: 40px" mat-raised-button (click)="drawer.toggle()" color="primary">Toggle
+    Operations</button> -->
+  <!-- <button style="position:absolute; right: 680px" mat-raised-button (click)="calculate()"
+    color="primary">Compute</button> -->
+</mat-toolbar>
+<mat-drawer-container [hasBackdrop]="false" class="full-size">
+  <mat-drawer #drawer mode="side" opened="true">
+    <mat-accordion class="headers-align" multi>
+      <mat-expansion-panel hideToggle expanded>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Numbers
+          </mat-panel-title>
+          <mat-panel-description>
+            Any Digit
+            <mat-icon>filter_1</mat-icon>
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <div cdkDropList id="number" [cdkDropListData]="numbers" [cdkDropListConnectedTo]="['canvasList']"
+          class="listVertical" (cdkDropListDropped)="drop($event); calculate()">
+          <div class="boxVertical" *ngFor="let item of numbers" cdkDrag>{{item}}</div>
+        </div>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel hideToggle expanded>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Basic Operations
+          </mat-panel-title>
+          <mat-panel-description>
+            Simple Arithmetic Operators
+            <mat-icon>add_box</mat-icon>
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <div cdkDropList id="basicOperation" [cdkDropListData]="basicOperations"
+          [cdkDropListConnectedTo]="['canvasList']" class="listVertical"
+          (cdkDropListDropped)="drop($event); calculate()">
+          <div class="boxVertical" *ngFor="let item of basicOperations" cdkDrag>{{item}}</div>
+        </div>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel *ngIf='isAdvanced' hideToggle expanded>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Advanced Operations
+          </mat-panel-title>
+          <mat-panel-description>
+            Advanced Arithmetic Operators
+            <mat-icon>poll</mat-icon>
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <div cdkDropList id="advancedOperation" [cdkDropListData]="advancedOperations"
+          [cdkDropListConnectedTo]="['canvasList']" class="listVertical"
+          (cdkDropListDropped)="drop($event); calculate()">
+          <div class="boxVertical" *ngFor="let item of advancedOperations" cdkDrag>{{item}}</div>
+        </div>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel *ngIf='isAdvanced' hideToggle expanded>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Relational Operations
+          </mat-panel-title>
+          <mat-panel-description>
+            Standard Relational Operators
+            <mat-icon>code</mat-icon>
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <div cdkDropList id="relationalOperation" [cdkDropListData]="relationalOperations"
+          [cdkDropListConnectedTo]="['canvasList']" class="listVertical"
+          (cdkDropListDropped)="drop($event); calculate()">
+          <div class="boxVertical" *ngFor="let item of relationalOperations" cdkDrag>{{item}}</div>
+        </div>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </mat-drawer>
+  <mat-drawer-content>
+    <mat-card style="width: -webkit-fill-available;">
+      <div class="canvas-card">
+        <div cdkDropList id="canvasList" [cdkDropListData]="canvas"
+          [cdkDropListConnectedTo]="['number', 'basicOperation', 'advancedOperation', 'relationalOperation']"
+          class="listHorizontal" (cdkDropListDropped)="dropReplicate($event); calculate()"
+          cdkDropListOrientation="horizontal">
+          <div class="boxHorizontal" *ngFor="let item of canvas" cdkDrag>{{item}}</div>
+        </div>
+        <div *ngIf="hasResult" class="canvas-result-output">Result: {{isComputed}}</div>
+        <div class="canvas-buttons">
+          <!-- <button class="canvas-compute-button" mat-raised-button (click)="calculate()"
+            color="primary">Compute</button>     -->
+          <button class="canvas-compute-button" mat-raised-button (click)="drawer.toggle()" color="primary">Toggle
+            Operations</button>
+
+          <button class="canvas-clear-button" mat-raised-button (click)="clear()" color="primary">Clear</button>
+
+        </div>
+      </div>
+    </mat-card>
+  </mat-drawer-content>
+</mat-drawer-container>

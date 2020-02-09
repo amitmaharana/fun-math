@@ -1,0 +1,37 @@
+.split-left {
+  width: 18%;
+  float: left;
+}
+.link-menu {
+  cursor: pointer;
+}
+a:hover {
+  text-decoration: none;
+}
+.link-menu:hover {
+  text-decoration: underline;
+}
+.right-center-panel {
+  display: flex;
+  border: 2px;
+  border-color: black;
+  width: 50%;
+}
+.slide-right {
+  position: relative;
+  left: 80px;
+  height: 246px;
+}
+.first-grade-panel {
+  height: 275px;
+}
+
+.flex-container {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+panel-body {
+  height: 1000px;
+  width: 500px;
+}

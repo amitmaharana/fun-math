@@ -1,0 +1,48 @@
+<mat-toolbar>
+    <mat-icon>grade</mat-icon><span>Student Grades Info</span>
+  </mat-toolbar>
+  
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+  
+    <!-- Position Column -->
+    <ng-container matColumnDef="submissionid">
+      <th mat-header-cell *matHeaderCellDef> Submission ID </th>
+      <td mat-cell *matCellDef="let element"> {{element.submissionId}} </td>
+    </ng-container>
+  
+    <!-- assignmentnumber Column -->
+    <ng-container matColumnDef="assignmentnumber">
+      <th mat-header-cell *matHeaderCellDef> Assignment Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.assignmentNumber}} </td>
+    </ng-container>
+
+    <!-- Student Email ID Column -->
+    <ng-container matColumnDef="studentid">
+        <th mat-header-cell *matHeaderCellDef> Student Email ID </th>
+        <td mat-cell *matCellDef="let element"> {{element.studentEmail}} </td>
+      </ng-container>
+
+    <!-- Class Column -->
+    <ng-container matColumnDef="class">
+        <th mat-header-cell *matHeaderCellDef> Class </th>
+        <td mat-cell *matCellDef="let element"> {{element.classNumber}} </td>
+      </ng-container>
+  
+    <!-- Marks Column -->
+    <ng-container matColumnDef="marks">
+      <th mat-header-cell *matHeaderCellDef> Score </th>
+      <td mat-cell *matCellDef="let element"> {{element.pointsScored}} </td>
+    </ng-container>
+  
+    <!-- Total Marks Column -->
+    <ng-container matColumnDef="total">
+      <th mat-header-cell *matHeaderCellDef> Out Of </th>
+      <td mat-cell *matCellDef="let element"> {{element.totalPoints}} </td>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>

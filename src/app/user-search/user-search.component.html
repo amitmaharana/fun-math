@@ -1,0 +1,36 @@
+<mat-toolbar>
+    <mat-icon>supervisor_account</mat-icon><span>View Users</span>
+</mat-toolbar>
+<mat-card>
+    <mat-card-content>
+        <div style="position: relative; left: 40%; width: 800px;">
+
+            <div id="search-component">
+                <mat-form-field class="example-full-width">
+                    <input matInput #searchBox id="search-box" placeholder="Enter userId or Name">
+                </mat-form-field>
+
+                <button class="search" title="Search" (click)="search(searchBox.value)"
+                    style="margin-left: 10px;">Search</button>
+            </div>
+
+            <ul class="users" *ngIf="Users">
+                <div *ngIf="!UsersSize">No users found.</div>
+                <div *ngFor="let user of Users">
+                    <!-- <input (click)="updateCheck(user.userId)" type="checkbox" /> -->
+
+                    <li>
+                        <mat-checkbox (click)="updateCheck(user.userId)"></mat-checkbox>&nbsp;
+                        <!-- <a (click)="goTo(user.userId)"> -->
+                        <span class="badge">{{user.userId}}</span> {{user.firstName}}
+                        <!-- </a> -->
+                        <button class="delete" title="delete User" (click)="delete(user)">x</button>
+                    </li>
+                </div>
+            </ul>
+
+            <button class="search" title="Delete Selected" (click)="deleteSelected()">Delete</button>
+            <button class="search" title="Back" (click)="goBack()" style="margin: 10px;">Back</button>
+        </div>
+    </mat-card-content>
+</mat-card>

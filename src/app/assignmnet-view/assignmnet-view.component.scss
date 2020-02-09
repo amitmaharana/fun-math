@@ -1,0 +1,37 @@
+// table {
+//     width: 50%;
+// }
+.center {
+  margin: auto;
+}
+.example-container {
+  height: 400px;
+
+  overflow: auto;
+}
+
+table {
+  width: 800px;
+}
+
+td.mat-column-star {
+  width: 10px;
+  padding-right: 4px;
+}
+
+th.mat-column-position,
+td.mat-column-position {
+  padding-left: 4px;
+}
+
+.mat-table-sticky:first-child {
+  border-right: 1px solid #e0e0e0;
+}
+
+.mat-table-sticky:first-child {
+  border-right: 1px solid #e0e0e0;
+}
+
+.mat-table-sticky:last-child {
+  border-left: 1px solid #e0e0e0;
+}

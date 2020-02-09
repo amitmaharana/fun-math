@@ -1,0 +1,86 @@
+<div *ngIf="!displayForm">
+    <h1>Fetching Questions....</h1>
+</div>
+<div *ngIf="displayForm">
+    <form #submitAssign="ngForm" (ngSubmit)="submitAssignment(submitAssign)">
+        <!-- <div>
+            <h2>{{assignmentNumber}}</h2>
+        </div> -->
+        <mat-toolbar>
+            <mat-icon>assignment</mat-icon><span>{{assignmentNumber}}</span>
+        </mat-toolbar>
+        <div>
+
+            <section class="card-section" *ngFor='let question of questionList; let i = index'>
+                <mat-card>
+                    <mat-card-header>
+                        <mat-card-title>Question {{i+1}}</mat-card-title>
+                        <mat-card-subtitle>{{question.description}}</mat-card-subtitle>
+                    </mat-card-header>
+                    <mat-card-content>
+                        <div class="flex-container" *ngFor='let image of question.images'>
+                            <span class="flex-item"><img src="{{image.name}}" /></span>
+                        </div>
+                        <div>
+                            <span>
+                                <p class="card_para">{{question.extradescription}}</p>
+                            </span>
+                        </div>
+                        <br />
+                        <br />
+                        <h4>Your answer: </h4>
+                        <div class="flex-container">
+                            <span>
+                                <table *ngIf='question.answers.type == "textbox"'>
+                                    <tr *ngFor='let answer of question.answers.fields; let j=index'>
+                                        <td>{{answer.answertext}} </td>
+                                        <td> <input type="text" ngModel name="{{question.ID}}" /></td>
+                                        <td> {{answer.answerunit}}</td>
+                                    </tr>
+                                </table>
+                            </span>
+
+                            <div *ngIf="question.answers.type=='image'">
+                                <span class="flex-item" *ngFor="let button of question.answers.buttons">
+                                    <button mat-raised-button type="submit" ngModel name="q{{i}}{{j}}"><img
+                                            src="../../assets/{{button.image}}" /></button>
+                                </span>
+                            </div>
+                            <!-- <div *ngIf="question.answers.type=='button'">                            
+                                <span class="flex-item" *ngFor="let button of question.answers.fields;let k=index">
+                                    <button mat-raised-button value="asdug">k</button>                                    
+                                </span>
+                            </div> -->
+                            <div *ngIf="question.answers.type=='button'">
+                                <mat-button-toggle-group #{{question.ID}}='matButtonToggleGroup' ngModel
+                                    name="{{question.ID}}">
+                                    <mat-button-toggle *ngFor="let button of question.answers.buttons"
+                                        value={{button.id}}>{{button.id}}</mat-button-toggle>
+                                </mat-button-toggle-group>
+                            </div>
+                        </div>
+                    </mat-card-content>
+                </mat-card>
+            </section>
+            <br>
+            <mat-card>
+                <mat-card-actions>
+                    <span>
+                        <button type="submit" mat-raised-button color="primary" style="
+                    left: 44%">Submit Assignment</button>
+                    </span>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+
+        <!--Multiplication and Division-->
+        <!--Understanding exponents-->
+        <!--Number theory-->
+        <!--Fractions-->
+        <!--Mixed Operations-->
+        <!--Probability-->
+        <!--Time-->
+        <!--Geometric Measurements-->
+        <!--Ratios and Percentages-->
+    </form>
+</div>

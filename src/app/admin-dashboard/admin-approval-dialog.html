@@ -1,0 +1,19 @@
+<h1 mat-dialog-title>Approval Requests</h1>
+<div mat-dialog-content>
+  <mat-list>
+    <mat-list-item *ngIf="data.dataList.length < 1">
+      No pending requests!
+    </mat-list-item>
+    <mat-list-item *ngFor="let item of data.dataList">{{item.emailId}}<b>&nbsp;Requested On:&nbsp;</b>{{item.date}}
+      <button mat-icon-button [mat-dialog-close]="item.id+' '+item.emailId+' '+item.date+' '+'approved'">
+        <mat-icon>check</mat-icon>
+      </button>
+      <button mat-icon-button [mat-dialog-close]="item.id+' '+item.emailId+' '+item.date+' '+'rejected'">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-list-item>
+  </mat-list>
+</div>
+<div mat-dialog-actions>
+  <button mat-raised-button (click)="onNoClick()">Close</button>
+</div>
