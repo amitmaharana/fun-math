@@ -4,10 +4,10 @@ Consists of different levels of difficulty to cater to various age groups and pr
 
 1. Technology Stack
 * Java
-* Angular
+* TypeScript
 * HTML5
 * SCSS
-* JavaScript
+* Angular
 * Spring Framework
 * MySQL Database
 
