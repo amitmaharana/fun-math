@@ -17,3 +17,5 @@ Consists of different levels of difficulty to cater to various age groups and pr
 * Dhananjay Dharne
 * Satyen Verma
 * Sharad Dhar
+
+![alt text](https://raw.githubusercontent.com/amitmaharana/amitmaharana.github.io/master/images/sample_funmath.png)
